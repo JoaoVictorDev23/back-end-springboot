@@ -21,12 +21,12 @@ public class USUARIO extends Pessoa {
 
 	public USUARIO() {
 		super();
-		addPerfil(Perfil.USUARIO_CONSULTA);
+		addPerfil(Perfil.USUARIO);
 	}
 
 	public USUARIO(Integer id, String nome, String cpf, String email, String senha) {
 		super(id, nome, cpf, email, senha);
-		addPerfil(Perfil.USUARIO_CONSULTA);
+		addPerfil(Perfil.USUARIO);
 	}
 
 	public List<Tarifa> getTarifas() {

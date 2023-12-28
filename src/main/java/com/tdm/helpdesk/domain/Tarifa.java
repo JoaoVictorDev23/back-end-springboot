@@ -31,11 +31,9 @@ public class Tarifa implements Serializable {
 	private String observação;
 	private String inicioRota;
 	private String fimRota;
-	private Float valorTarifa;
+	private Double valorTarifa;
 	
-	@ManyToOne
-	@JoinColumn(name = "administrador_id")
-	private ADMINISTRADOR admin;
+
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")
 	private USUARIO usuario;
@@ -44,8 +42,7 @@ public class Tarifa implements Serializable {
 		super();
 	}
 
-	public Tarifa(Integer id, Status status, String observação, String inicioRota, String fimRota, Float valorTarifa,
-			ADMINISTRADOR admin, USUARIO usuario) {
+	public Tarifa(Integer id, Status status, String observação, String inicioRota, String fimRota, Double valorTarifa,USUARIO usuario) {
 		super();
 		this.id = id;
 		this.status = status;
@@ -53,7 +50,6 @@ public class Tarifa implements Serializable {
 		this.inicioRota = inicioRota;
 		this.fimRota = fimRota;
 		this.valorTarifa = valorTarifa;
-		this.admin = admin;
 		this.usuario = usuario;
 	}
 
@@ -113,20 +109,12 @@ public class Tarifa implements Serializable {
 		this.fimRota = fimRota;
 	}
 
-	public Float getValorTarifa() {
+	public Double getValorTarifa() {
 		return valorTarifa;
 	}
 
-	public void setValorTarifa(Float valorTarifa) {
+	public void setValorTarifa(Double valorTarifa) {
 		this.valorTarifa = valorTarifa;
-	}
-
-	public ADMINISTRADOR getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(ADMINISTRADOR admin) {
-		this.admin = admin;
 	}
 
 	public USUARIO getUsuario() {

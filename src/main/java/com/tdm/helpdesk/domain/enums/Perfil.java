@@ -2,7 +2,7 @@ package com.tdm.helpdesk.domain.enums;
 
 public enum Perfil {
 	
-	ADMIN(0,"ROLE_ADMIN"),USUARIO_CONSULTA(1,"ROLE_USER_CONSULTAR"),USUARIO_CADASTRAR(2,"ROLE_USER_CADASTRAR");
+	ADMIN(0,"ROLE_ADMIN"),USUARIO(1,"ROLE_USER");
 	
 	private Integer codigo;
 	private String descricao;
