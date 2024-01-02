@@ -25,6 +25,7 @@ public class USUARIODTO implements Serializable{
 
 	public USUARIODTO() {
 		super();
+		addPerfil(Perfil.USUARIO);
 	}
 
 	public USUARIODTO(USUARIO obj) {
@@ -36,6 +37,7 @@ public class USUARIODTO implements Serializable{
 		this.senha = obj.getSenha();
 		this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
 		this.dataCriacao = obj.getDataCriacao();
+		addPerfil(Perfil.USUARIO);
 	}
 
 	public Integer getId() {
