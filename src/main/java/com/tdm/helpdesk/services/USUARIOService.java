@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.tdm.helpdesk.domain.USUARIO;
 import com.tdm.helpdesk.repositories.UsuarioRepository;
+import com.tdm.helpdesk.services.exceptions.ObjectnotFoundException;
 
 @Service
 public class USUARIOService {
@@ -17,7 +18,7 @@ public class USUARIOService {
 	public USUARIO findById(Integer id) {
 		
 		Optional<USUARIO> obj = repository.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(()-> new ObjectnotFoundException("Objeto não encontrado! ID: "+ id));
 		
 	}
 }
