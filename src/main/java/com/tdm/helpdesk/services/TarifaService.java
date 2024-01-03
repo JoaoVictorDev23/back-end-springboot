@@ -1,5 +1,6 @@
 package com.tdm.helpdesk.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,16 @@ public class TarifaService {
 		
 		return repository.save(newTarifa(objDTO));
 	}
+
+	
+	public Tarifa update(Integer id, @Valid TarifaDTO objDTO) {
+		
+		objDTO.setId(id);
+		Tarifa oldObj = findById(id);
+		oldObj = newTarifa(objDTO);
+		return repository.save(oldObj);
+	}
+
 	
 	private Tarifa newTarifa(TarifaDTO obj) {
 		USUARIO usuario = usuarioservice.findById(obj.getUsuario());
@@ -48,6 +59,9 @@ public class TarifaService {
 		Tarifa tarifa = new Tarifa();
 		if(obj.getId() !=null ) {
 			tarifa.setId(obj.getId());
+		}
+		if(obj.getStatus().equals(2)) {
+			tarifa.setDataFechamento(LocalDate.now());
 		}
 		tarifa.setUsuario(usuario);
 		tarifa.setStatus(Status.toEnum(obj.getStatus()));
@@ -59,5 +73,7 @@ public class TarifaService {
 		
 		
 	}
+
+
 
 }
