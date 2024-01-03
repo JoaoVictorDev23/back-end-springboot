@@ -1,0 +1,101 @@
+[33mcommit 6cbc5884a4b63d0e79579cdf7410ce357f22c1f7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Wed Jan 3 15:39:49 2024 -0300
+
+    findbyId para Tarifas
+
+[33mcommit 2a88a4c33915d53d5d54066286d3521762dd4a6b[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Wed Jan 3 11:58:51 2024 -0300
+
+    metodo para delete
+
+[33mcommit 23d08d701755c97bb0f6d380dae273f5b0dca74d[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Wed Jan 3 11:31:50 2024 -0300
+
+    Metodo put para tecnico implementado
+
+[33mcommit c5edc3df576a8aed63000cdcf8f0da141874747c[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Wed Jan 3 11:07:40 2024 -0300
+
+    Excessão quanto a campos e Validation!
+
+[33mcommit 1747c80808d472780b5025a2826a795398ca36ae[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Wed Jan 3 10:25:19 2024 -0300
+
+    exceção para cpf e email ja cadastrados
+
+[33mcommit 2258d0d56b23b14657c6762eab3062151735cb93[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 17:24:21 2024 -0300
+
+    EndPoint - create para USUARIO
+
+[33mcommit 0a1a4bb81d0e45367149189cd1ebaee2b893a29b[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 17:03:05 2024 -0300
+
+    EndPoint findAll para Usuario
+
+[33mcommit 1535ba120283845604466531a91d10804c990872[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 15:52:42 2024 -0300
+
+    Exceção para objeto não encontrado
+
+[33mcommit 598b5f5739cd49d9812a1126bcd6bdb39e2b2fb5[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 14:58:49 2024 -0300
+
+    Padrão DTO para USUARIO
+
+[33mcommit d08e01ca6bf83a9b9ab98d58365b6aa920bf5c91[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 12:36:38 2024 -0300
+
+    end point findById Para usuario
+
+[33mcommit 4ed900332f409233626625ab876875796b76e8cc[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 12:36:03 2024 -0300
+
+    Protegendo aplicação contra serialização
+
+[33mcommit e066cf367cbadb2a238e264fedba27be8a688c77[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 11:22:21 2024 -0300
+
+    Perfil de Dev
+
+[33mcommit 3e7592d74262802835010964d510976343dfcfe8[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Jan 2 10:09:23 2024 -0300
+
+    Perfil de Teste criado
+
+[33mcommit 709623959be7cdd3ad9c5eef95dda45703a04da6[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Thu Dec 28 17:54:11 2023 -0300
+
+    carga inicial da base dce dados
+
+[33mcommit efd3d5f3aaf1ba374612b016dd98512c4f606169[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Thu Dec 28 15:06:23 2023 -0300
+
+    anotacoes JPA para as classes de dominio
+
+[33mcommit 454f079c659ff4abc716b1f73ea98cf99bd8b8a7[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Wed Dec 27 17:15:15 2023 -0300
+
+    classes de dominio iniciadas
+
+[33mcommit a6554d56e6ce08a4868304e95e4f3882af01cafb[m
+Author: JoaoVictorDev23 <joaovictor500@gmail.com>
+Date:   Tue Dec 26 14:01:35 2023 -0300
+
+    projeto iniciado
