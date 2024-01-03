@@ -3,6 +3,8 @@ package com.tdm.helpdesk.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +43,14 @@ public class USUARIOService {
 		USUARIO newObj = new USUARIO(objDTO);
 		return repository.save(newObj);
 	}
+	
+	public USUARIO update(Integer id, @Valid USUARIODTO objDTO) {
+		objDTO.setId(id);
+		USUARIO oldobj = findById(id); 
+		validaPorCpfEEmail(objDTO);
+		oldobj = new USUARIO(objDTO);
+		return repository.save(oldobj);
+	}
 
 	private void validaPorCpfEEmail(USUARIODTO objDTO) {
 		Optional<Pessoa> obj = pessoarepository.findByCpf(objDTO.getCpf());
@@ -54,5 +64,7 @@ public class USUARIOService {
 		}
 		
 	}
+
+
 }
 
