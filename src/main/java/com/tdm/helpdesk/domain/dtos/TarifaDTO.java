@@ -3,6 +3,8 @@ package com.tdm.helpdesk.domain.dtos;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.tdm.helpdesk.domain.Tarifa;
 
@@ -17,11 +19,18 @@ public class TarifaDTO implements Serializable{
 	private LocalDate dataAbertura = LocalDate.now();
 	@JsonFormat(pattern ="dd/MM/yyyy")
 	private LocalDate dataFechamento;
+	
+	@NotNull(message = "O Campo STATUS é requerido!")
 	private Integer status;
+	@NotNull(message = "O Campo OBSERVAÇÕES é requerido!")
 	private String observação;
+	@NotNull(message = "O Campo INICIO DA ROTA é requerido!")
 	private String inicioRota;
+	@NotNull(message = "O Campo FINAL DA ROTA é requerido!")
 	private String fimRota;
+	@NotNull(message = "O Campo TARIFA é requerido!")
 	private Double valorTarifa;
+	@NotNull(message = "O Campo USUARIO é requerido!")
 	private Integer usuario;
 	private String nomeUsuario;
 	
