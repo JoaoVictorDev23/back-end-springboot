@@ -51,6 +51,19 @@ public class USUARIOService {
 		oldobj = new USUARIO(objDTO);
 		return repository.save(oldobj);
 	}
+	
+
+	public void delete(Integer id) {
+		
+		USUARIO obj = findById(id);
+		if(obj.getTarifas().size()>0) {
+			throw new DataIntegrityViolationException("Usuario possui Tarifas e não pode ser excluido!");		
+			
+		}else {
+			repository.deleteById(id);
+		}
+		
+	}
 
 	private void validaPorCpfEEmail(USUARIODTO objDTO) {
 		Optional<Pessoa> obj = pessoarepository.findByCpf(objDTO.getCpf());
@@ -64,6 +77,7 @@ public class USUARIOService {
 		}
 		
 	}
+
 
 
 }
