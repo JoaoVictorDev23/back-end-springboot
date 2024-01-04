@@ -3,6 +3,7 @@ package com.tdm.helpdesk.services;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tdm.helpdesk.domain.Tarifa;
@@ -18,16 +19,19 @@ public class DBService {
 	@Autowired
 	private UsuarioRepository usuariorepository;
 	@Autowired
-	private TarifaRepository tarifarepository;
+	private TarifaRepository tarifarepository; 
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+
 	
 	
 	 public void instanciaDB() {
 			
-			USUARIO user1 = new USUARIO(null, "Rikally", "11111111111", "Rikally@tdmlogistica.com", "12345");
+			USUARIO user1 = new USUARIO(null, "Rikally", "953.225.110-32", "Rikally@tdmlogistica.com", encoder.encode("12345"));
 			user1.addPerfil(Perfil.ADMIN);
-			USUARIO user2 = new USUARIO(null, "Fabiano", "22222222222", "fabiano@tdmlogistica.com", "1321");
-			USUARIO user3 = new USUARIO(null, "Lucas", "11111111113", "lucas@tdmlogistica.com", "1321");
-			USUARIO user4 = new USUARIO(null, "Gustavo", "11111311111", "gustavo@tdmlogistica.com", "1321");
+			USUARIO user2 = new USUARIO(null, "Fabiano", "083.447.040-30", "fabiano@tdmlogistica.com", "1321");
+			USUARIO user3 = new USUARIO(null, "Lucas", "912.146.430-86", "lucas@tdmlogistica.com", "1321");
+			USUARIO user4 = new USUARIO(null, "Gustavo", "457.496.370-00", "gustavo@tdmlogistica.com", "1321");
 			
 			Tarifa t1 = new Tarifa(null, Status.ABERTO, "Teste", "Goiania","Sao Paulo", 110.5, user1);
 			
