@@ -1,5 +1,7 @@
 package com.tdm.helpdesk.resources.exception;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,8 @@ public class ResourceExceptionHandler {
 	}
 	
 	@ExceptionHandler(DataIntegrityViolationException.class)
-	public ResponseEntity<StandardError> dataIntegrityViolationException(DataIntegrityViolationException ex, HttpServletRequest request){
+	public ResponseEntity<StandardError> dataIntegrityViolationException(DataIntegrityViolationException ex,
+			HttpServletRequest request){
 		
 		StandardError error = new StandardError(System.currentTimeMillis(),HttpStatus.BAD_REQUEST.value(),
 				"Violação de Dados!!",ex.getMessage(),request.getRequestURI());
@@ -35,7 +38,8 @@ public class ResourceExceptionHandler {
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public ResponseEntity<StandardError> validantionErrors (MethodArgumentNotValidException ex, HttpServletRequest request){
+	public ResponseEntity<StandardError> validantionErrors (MethodArgumentNotValidException ex,
+			HttpServletRequest request){
 		
 		ValidationError errors = new ValidationError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(), 
 				"Validation error","Erro na validação dos campos", request.getRequestURI());
@@ -47,6 +51,17 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
 		
 	}
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<StandardError> handleConstraintViolationException(ConstraintViolationException ex, HttpServletRequest request) {
+        ValidationError errors = new ValidationError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(),
+                "Erro de Validação", "Erro na validação dos campos", request.getRequestURI());
+
+        for (ConstraintViolation<?> violation : ex.getConstraintViolations()) {
+            errors.addError(violation.getPropertyPath().toString(), violation.getMessage());
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+    }
 
 
 }

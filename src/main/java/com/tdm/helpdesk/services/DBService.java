@@ -29,9 +29,9 @@ public class DBService {
 			
 			USUARIO user1 = new USUARIO(null, "Rikally", "953.225.110-32", "Rikally@tdmlogistica.com", encoder.encode("12345"));
 			user1.addPerfil(Perfil.ADMIN);
-			USUARIO user2 = new USUARIO(null, "Fabiano", "083.447.040-30", "fabiano@tdmlogistica.com", "1321");
-			USUARIO user3 = new USUARIO(null, "Lucas", "912.146.430-86", "lucas@tdmlogistica.com", "1321");
-			USUARIO user4 = new USUARIO(null, "Gustavo", "457.496.370-00", "gustavo@tdmlogistica.com", "1321");
+			USUARIO user2 = new USUARIO(null, "Fabiano", "083.447.040-30", "fabiano@tdmlogistica.com", encoder.encode("123456"));
+			USUARIO user3 = new USUARIO(null, "Lucas", "912.146.430-86", "lucas@tdmlogistica.com", encoder.encode("12345"));
+			USUARIO user4 = new USUARIO(null, "Gustavo", "457.496.370-00", "gustavo@tdmlogistica.com", encoder.encode("12345"));
 			
 			Tarifa t1 = new Tarifa(null, Status.ABERTO, "Teste", "Goiania","Sao Paulo", 110.5, user1);
 			

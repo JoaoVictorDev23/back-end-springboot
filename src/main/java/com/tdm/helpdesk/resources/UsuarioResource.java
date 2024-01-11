@@ -46,7 +46,8 @@ public class UsuarioResource {
 	}
 	
 	@PreAuthorize("hasAnyRole('ADMIN')")
-	@PostMapping	
+	@PostMapping
+	
 	public ResponseEntity<USUARIODTO> create(@Valid @RequestBody USUARIODTO objDTO){
 		USUARIO newObj = service.create(objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
@@ -64,7 +65,7 @@ public class UsuarioResource {
 	@PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<USUARIODTO> delete(@PathVariable Integer id){
-    	service.delete(id);
+    	service.delete(id); 
     	return ResponseEntity.noContent().build();
     	
     }

@@ -1,5 +1,6 @@
 package com.tdm.helpdesk.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+
 import com.tdm.helpdesk.domain.Pessoa;
 import com.tdm.helpdesk.domain.USUARIO;
 import com.tdm.helpdesk.domain.dtos.USUARIODTO;
@@ -17,9 +19,10 @@ import com.tdm.helpdesk.repositories.UsuarioRepository;
 import com.tdm.helpdesk.services.exceptions.DataIntegrityViolationException;
 import com.tdm.helpdesk.services.exceptions.ObjectnotFoundException;
 
+
 @Service
 public class USUARIOService {
-	
+	 
 	@Autowired
 	private UsuarioRepository repository;
 	@Autowired
@@ -45,12 +48,18 @@ public class USUARIOService {
 		objDTO.setSenha(encoder.encode(objDTO.getSenha()));
 		validaPorCpfEEmail(objDTO);
 		USUARIO newObj = new USUARIO(objDTO);
+		newObj.setDataCriacao(LocalDate.now());
 		return repository.save(newObj);
 	}
 	
 	public USUARIO update(Integer id, @Valid USUARIODTO objDTO) {
 		objDTO.setId(id);
 		USUARIO oldobj = findById(id); 
+		
+		if(!objDTO.getSenha().equals(oldobj.getSenha())) {
+			objDTO.setSenha(encoder.encode(objDTO.getSenha()));
+		}
+		
 		validaPorCpfEEmail(objDTO);
 		oldobj = new USUARIO(objDTO);
 		return repository.save(oldobj);
@@ -81,8 +90,11 @@ public class USUARIOService {
 		}
 		
 	}
+	
+
 
 
 
 }
+
 
