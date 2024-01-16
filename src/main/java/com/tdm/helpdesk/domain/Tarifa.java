@@ -28,7 +28,7 @@ public class Tarifa implements Serializable {
 	
 	
 	private Status status;
-	private String observação;
+	private String observacao;
 	private String inicioRota;
 	private String fimRota;
 	private Double valorTarifa;
@@ -38,19 +38,21 @@ public class Tarifa implements Serializable {
 	@JoinColumn(name = "usuario_id")
 	private USUARIO usuario;
 	
+	
 	public Tarifa() {
 		super();
 	}
 
-	public Tarifa(Integer id, Status status, String observação, String inicioRota, String fimRota, Double valorTarifa,USUARIO usuario) {
+	public Tarifa(Integer id, Status status, String observacao, String inicioRota, String fimRota, Double valorTarifa,USUARIO usuario) {
 		super();
 		this.id = id;
 		this.status = status;
-		this.observação = observação;
+		this.observacao = observacao;
 		this.inicioRota = inicioRota;
 		this.fimRota = fimRota;
 		this.valorTarifa = valorTarifa;
 		this.usuario = usuario;
+		
 	}
 
 	public Integer getId() {
@@ -85,12 +87,12 @@ public class Tarifa implements Serializable {
 		this.status = status;
 	}
 
-	public String getObservação() {
-		return observação;
+	public String getObservacao() {
+		return observacao;
 	}
 
-	public void setObservação(String observação) {
-		this.observação = observação;
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
 	}
 
 	public String getInicioRota() {

@@ -69,7 +69,14 @@ public class UsuarioResource {
     	return ResponseEntity.noContent().build();
     	
     }
-    
-    
+	
+    @GetMapping(value = "/email/{email:.+}")
+    public ResponseEntity<Integer> findIdByEmail(@PathVariable String email) {
+        Integer userId = service.findUserIdByEmail(email);
+        return ResponseEntity.ok().body(userId);
+    }
+	
+
+
  	
 }

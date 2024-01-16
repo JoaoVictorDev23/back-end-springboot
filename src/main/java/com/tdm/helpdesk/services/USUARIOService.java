@@ -57,14 +57,14 @@ public class USUARIOService {
 		USUARIO oldobj = findById(id); 
 		
 		if(!objDTO.getSenha().equals(oldobj.getSenha())) {
-			objDTO.setSenha(encoder.encode(objDTO.getSenha()));
+			objDTO.setSenha(encoder.encode(objDTO.getSenha())); 
 		}
 		
 		validaPorCpfEEmail(objDTO);
 		oldobj = new USUARIO(objDTO);
 		return repository.save(oldobj);
 	}
-	
+	 
 
 	public void delete(Integer id) {
 		
@@ -90,6 +90,12 @@ public class USUARIOService {
 		}
 		
 	}
+    public Integer findUserIdByEmail(String email) {
+        Optional<Pessoa> pessoa = pessoarepository.findByEmail(email);
+        return pessoa.map(Pessoa::getId).orElse(null);
+    }
+
+
 	
 
 

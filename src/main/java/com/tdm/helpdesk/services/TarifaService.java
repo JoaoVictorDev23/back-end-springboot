@@ -67,7 +67,7 @@ public class TarifaService {
 		tarifa.setStatus(Status.toEnum(obj.getStatus()));
 		tarifa.setInicioRota(obj.getInicioRota());
 		tarifa.setFimRota(obj.getFimRota());
-		tarifa.setObservação(obj.getObservação());
+		tarifa.setObservacao(obj.getObservacao());
 		tarifa.setValorTarifa(obj.getValorTarifa());
 		return tarifa;
 		

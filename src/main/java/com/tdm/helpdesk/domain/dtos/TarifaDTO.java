@@ -23,7 +23,7 @@ public class TarifaDTO implements Serializable{
 	@NotNull(message = "O Campo STATUS é requerido!")
 	private Integer status;
 	@NotNull(message = "O Campo OBSERVAÇÕES é requerido!")
-	private String observação;
+	private String observacao;
 	@NotNull(message = "O Campo INICIO DA ROTA é requerido!")
 	private String inicioRota;
 	@NotNull(message = "O Campo FINAL DA ROTA é requerido!")
@@ -47,7 +47,7 @@ public class TarifaDTO implements Serializable{
 		this.dataAbertura = obj.getDataAbertura();
 		this.dataFechamento = obj.getDataFechamento();
 		this.status = obj.getStatus().getCodigo();
-		this.observação = obj.getObservação();
+		this.observacao = obj.getObservacao();
 		this.inicioRota = obj.getInicioRota();
 		this.fimRota = obj.getFimRota();
 		this.valorTarifa = obj.getValorTarifa();
@@ -96,13 +96,13 @@ public class TarifaDTO implements Serializable{
 	}
 
 
-	public String getObservação() {
-		return observação;
+	public String getObservacao() {
+		return observacao;
 	}
 
 
-	public void setObservação(String observação) {
-		this.observação = observação;
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
 	}
 
 
